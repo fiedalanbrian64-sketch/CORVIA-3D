@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#29233d">
+  <meta name="description" content="CORVIA ward orchestration station for coordinated hospital operations.">
+  <title>CORVIA | Ward Orchestration</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css?v=login-refresh-20261112">
+  <script src="config.js?v=login-refresh-20261112" defer></script>
+  <script src="app.js?v=login-refresh-v3-20261112" defer></script>
+</head>
+<body>
+  <div id="intro-splash" class="intro-splash">
+    <div class="intro-content" aria-hidden="true">
+      <div class="intro-heart" aria-hidden="true">
+        <svg viewBox="0 0 80 80" focusable="false">
+          <path class="intro-heart-shape" d="M40 68S10 49 10 29C10 17 24 11 34 22l6 7 6-7c10-11 24-5 24 7 0 20-30 39-30 39Z"/>
+          <path class="intro-heart-cross" d="M40 28v25m-12-12h24"/>
+        </svg>
+      </div>
+      <p class="intro-eyebrow">CONNECTED CARE. COORDINATED TEAMS.</p>
+      <p class="intro-wordmark">CORVIA</p>
+      <h1>Ward Orchestration Platform</h1>
+      <p class="intro-tagline">Streamlining healthcare operations with precision &amp; empathy.</p>
+      <div class="intro-ekg" aria-hidden="true">
+        <svg viewBox="0 0 940 72" preserveAspectRatio="none" focusable="false">
+          <path pathLength="1000" d="M0 37h142l18-1 16-4 14 8 15-3h78l17-1 13-4 14 8 16-28 17 49 17-28 14 8h79l17-1 16-4 14 8 15-3h78l17-1 13-4 14 8 16-28 17 49 17-28 14 8h79l17-1 16-4 14 8 15-3h78"/>
+        </svg>
+      </div>
+    </div>
+    <button id="skip-intro" class="skip-intro" type="button">Skip intro</button>
+  </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="ticker" role="status" aria-label="Hospital system status" inert>
+    <div class="ticker-inner">
+      <span class="ticker-node"><span class="status-dot"></span> HOSPITAL INTRANET NODE 01</span>
+      <span id="shift-status">Shift details loading</span>
+      <span><span class="status-dot"></span> Ward synchronization: <strong id="sync-status">Online</strong></span>
+      <time id="live-clock" aria-label="Current local time">--:--:-- --</time>
+    </div>
+  </div>
+
+  <header class="site-header" inert>
+    <a class="brand" href="#" aria-label="CORVIA home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M24 7c-5.8-7-17-2.7-17 6.1 0 10 17 24 17 24s17-14 17-24C41 4.3 29.8 0 24 7Z"/><path d="M24 12v18M15 21h18"/></svg>
+      </span>
+      <span><strong>CORVIA</strong><small>WARD ORCHESTRATION</small></span>
+    </a>
+    <div class="header-right">
+      <span class="header-tagline">Streamlining care with precision &amp; empathy</span>
+      <div id="session-badge" class="session-badge" hidden>
+        <span class="avatar" id="session-avatar">C</span>
+        <span class="session-copy"><strong id="session-name"></strong><small id="session-role"></small></span>
+        <button id="logout-button" class="button button-quiet button-small" type="button">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-container" inert>
+    <section id="gateway-view" class="gateway-view">
+      <section class="welcome-banner" aria-labelledby="welcome-heading">
+        <div class="welcome-copy">
+          <span class="eyebrow">CONNECTED CARE. COORDINATED TEAMS.</span>
+          <h1 id="welcome-heading">Welcome to CORVIA Ward Orchestration Platform</h1>
+          <p>Streamlining Healthcare Operations with Precision &amp; Empathy.</p>
+        </div>
+        <div class="ecg-visual" aria-hidden="true">
+          <svg class="ecg-ribbon" viewBox="0 0 1800 80" preserveAspectRatio="none">
+            <path class="ecg-glow" d="M0 42 H180 L200 42 218 39 230 45 246 42 H344 L362 42 374 38 386 48 401 13 418 68 434 36 446 42 H560 L576 42 592 37 606 47 620 42 H710 L730 42 748 39 760 45 776 42 H900 L1080 42 1100 42 1118 39 1130 45 1146 42 H1244 L1262 42 1274 38 1286 48 1301 13 1318 68 1334 36 1346 42 H1460 L1476 42 1492 37 1506 47 1520 42 H1610 L1630 42 1648 39 1660 45 1676 42 H1800"/>
+            <path class="ecg-trace" d="M0 42 H180 L200 42 218 39 230 45 246 42 H344 L362 42 374 38 386 48 401 13 418 68 434 36 446 42 H560 L576 42 592 37 606 47 620 42 H710 L730 42 748 39 760 45 776 42 H900 L1080 42 1100 42 1118 39 1130 45 1146 42 H1244 L1262 42 1274 38 1286 48 1301 13 1318 68 1334 36 1346 42 H1460 L1476 42 1492 37 1506 47 1520 42 H1610 L1630 42 1648 39 1660 45 1676 42 H1800"/>
+          </svg>
+        </div>
+      </section>
+
+      <div class="gateway-grid">
+        <section class="panel onboarding-panel" aria-labelledby="quickstart-heading">
+          <div class="section-heading">
+            <div><span class="eyebrow">YOUR CARE TEAM, IN SYNC</span><h2 id="quickstart-heading">One station. Every role.</h2></div>
+            <span class="icon-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M3 12h4l3-8 4 16 3-8h4" />
+              </svg>
+            </span>
+          </div>
+          <p class="muted">Choose your access profile to open a focused workspace for your part in the care journey.</p>
+          <div class="role-guide">
+            <article class="role-guide-item"><span class="role-icon doctor-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 3H5a2 2 0 0 0-2 2v4m0 0a3 3 0 1 0 3-3M3 9v2a4 4 0 0 0 4 4h3"/><path d="M14 4h7v7h-7zM17.5 5.8v3.4m-1.7-1.7h3.4M10 15v2a4 4 0 0 0 8 0v-1"/><circle cx="18" cy="14" r="2"/></svg></span><div><h3>Doctors</h3><p>Coordinate admissions, prescriptions, and urgent hospital-wide updates.</p></div></article>
+            <article class="role-guide-item"><span class="role-icon nurse-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.8 8.8c0 5.1-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.8a4.6 4.6 0 0 1 8.8-1.9 4.6 4.6 0 0 1 8.8 1.9Z"/><path d="M12 9v5m-2.5-2.5h5"/></svg></span><div><h3>Nurses</h3><p>Record observations, respond to patient calls, and manage medication rounds.</p></div></article>
+            <article class="role-guide-item"><span class="role-icon worker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19h-11Z"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14a5 5 0 0 1 4.5 5H17"/></svg></span><div><h3>Health workers</h3><p>Open a dedicated workstation for your clinical or operational department.</p></div></article>
+            <article class="role-guide-item"><span class="role-icon patient-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="7" r="3.5"/><path d="M5 20v-1.5a7 7 0 0 1 14 0V20H5Z"/><path d="M18 4.5h3m-1.5-1.5v3"/></svg></span><div><h3>Patients</h3><p>See your care team and request assistance directly from the nurse station.</p></div></article>
+          </div>
+          <div class="privacy-note"><span aria-hidden="true">盾</span><p><strong>Prototype privacy notice</strong><br>Accounts and station entries stay in this browser only. CORVIA is not connected to hospital records or emergency services. Do not enter real patient information.</p></div>
+        </section>
+
+        <section class="panel access-panel" aria-labelledby="access-heading">
+          <span class="eyebrow">SECURE WORKSTATION ACCESS</span>
+          <h2 id="access-heading">Welcome back</h2>
+          <p class="muted">Sign in to your CORVIA workspace or provision a local station account.</p>
+          <div class="tab-list" role="tablist" aria-label="Account access">
+            <button id="login-tab" class="tab-button is-active" role="tab" aria-selected="true" aria-controls="login-panel" type="button">Log in</button>
+            <button id="signup-tab" class="tab-button" role="tab" aria-selected="false" aria-controls="signup-panel" type="button">Sign up</button>
+          </div>
+          <form id="login-panel" class="access-form" role="tabpanel" aria-labelledby="login-tab">
+            <label for="login-role">Access profile</label>
+            <select id="login-role" name="role" required aria-describedby="login-role-help">
+              <option value="">Select your role</option>
+              <option value="doctor">Doctor</option><option value="nurse">Nurse</option>
+              <option value="health-worker">Health Worker</option><option value="patient">Patient</option>
+            </select>
+            <small id="login-role-help" class="field-help">Select the role assigned to your CORVIA account.</small>
+            <div id="login-department-wrap" hidden>
+              <label for="login-department">Department workstation</label>
+              <select id="login-department" name="department" aria-describedby="login-department-help"></select>
+              <small id="login-department-help" class="field-help">Choose the workstation associated with your account.</small>
+            </div>
+            <label for="login-id">Staff / User ID</label>
+            <input id="login-id" name="userId" autocomplete="username" required aria-describedby="login-id-help">
+            <small id="login-id-help" class="field-help">Enter your unique station account ID.</small>
+            <label for="login-password">Password</label>
+            <div class="password-field"><input id="login-password" name="password" type="password" autocomplete="current-password" required aria-describedby="login-password-help"><button class="password-toggle" data-toggle-password="login-password" type="button" aria-label="Show password">Show</button></div>
+            <small id="login-password-help" class="field-help">Your password is checked against this browser's local account store.</small>
+            <p id="login-message" class="form-message" role="alert" aria-live="polite"></p>
+            <button id="login-submit" class="button button-primary button-full" type="submit"><span id="login-submit-label" aria-live="polite">Open my workspace</span><span aria-hidden="true">→</span></button>
+          </form>
+
+          <form id="signup-panel" class="access-form" role="tabpanel" aria-labelledby="signup-tab" hidden>
+            <label for="signup-name">Full name</label>
+            <input id="signup-name" name="fullName" autocomplete="name" required minlength="2" aria-describedby="signup-name-help">
+            <small id="signup-name-help" class="field-help">Use the name shown on your approved station account.</small>
+            <label for="signup-id">Staff / User ID</label>
+            <input id="signup-id" name="userId" autocomplete="username" required minlength="3" maxlength="40" aria-describedby="signup-id-help">
+            <small id="signup-id-help" class="field-help">Choose a unique ID with at least 3 characters.</small>
+            <label for="signup-password">Create password</label>
+            <div class="password-field"><input id="signup-password" name="password" type="password" autocomplete="new-password" required minlength="8" aria-describedby="signup-password-help"><button class="password-toggle" data-toggle-password="signup-password" type="button" aria-label="Show password">Show</button></div>
+            <small id="signup-password-help" class="field-help">Use at least 8 characters. Avoid reusing a personal password.</small>
+            <label for="signup-role">Role category</label>
+            <select id="signup-role" name="role" required aria-describedby="signup-role-help">
+              <option value="">Select your role</option><option value="doctor">Doctor</option><option value="nurse">Nurse</option><option value="health-worker">Health Worker</option><option value="patient">Patient</option>
+            </select>
+            <small id="signup-role-help" class="field-help">Account role determines which station modules are available.</small>
+            <div id="signup-department-wrap" hidden>
+              <label for="signup-department">Assigned department workstation</label>
+              <select id="signup-department" name="department" aria-describedby="signup-department-help"></select>
+              <small id="signup-department-help" class="field-help">Health workers must select their assigned workstation.</small>
+            </div>
+            <p id="signup-message" class="form-message" role="alert" aria-live="polite"></p>
+            <button class="button button-primary button-full" type="submit">Create station account <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="access-footnote">For authorized station use only. This local prototype is not a clinical record system.</p>
+        </section>
+      </div>
+      <footer class="gateway-footer"><span>© <span id="current-year"></span> CORVIA Ward Orchestration</span><span>Designed for coordinated, compassionate care</span></footer>
+    </section>
+
+    <section id="workspace-view" class="workspace-view" hidden aria-live="polite">
+      <div class="workspace-topline">
+        <div><span class="eyebrow">WARD ORCHESTRATION / <span id="workspace-section-name">WORKSPACE</span></span><h1 id="workspace-heading">Care team workspace</h1><p id="workspace-description" class="muted"></p></div>
+        <span class="online-chip"><span class="status-dot"></span> Station online</span>
+      </div>
+      <div id="workspace-content"></div>
+      <footer class="workspace-footer"><span>CORVIA station data stays in this browser.</span><button id="return-gateway" class="text-button" type="button">Return to gateway</button></footer>
+    </section>
+  </main>
+
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite"></div>
+  <dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title">
+    <form method="dialog" class="dialog-card"><span class="dialog-symbol" aria-hidden="true">!</span><h2 id="confirm-title">Confirm action</h2><p id="confirm-copy"></p><div class="dialog-actions"><button class="button button-quiet" value="cancel">Cancel</button><button id="confirm-accept" class="button button-danger" value="confirm">Confirm</button></div></form>
+  </dialog>
+</body>
+</html>

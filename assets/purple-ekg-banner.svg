@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="300" viewBox="0 0 1440 300" fill="none">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1440" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#211936"/>
+      <stop offset=".52" stop-color="#30234B"/>
+      <stop offset="1" stop-color="#40305F"/>
+    </linearGradient>
+    <radialGradient id="ambient" cx="0" cy="0" r="1" gradientTransform="matrix(730 205 -124 442 1025 16)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9271DF" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#9271DF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-20%" y="-150%" width="140%" height="400%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <pattern id="trace" width="360" height="300" patternUnits="userSpaceOnUse">
+      <path d="M-1 258H72L88 255L100 261L114 258H145L158 258L172 245L185 270L202 218L220 285L239 247L252 258H286L300 258L314 254L326 262L338 258H361" stroke="#C4A5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <animate attributeName="patternTransform" values="translate(0 0);translate(-360 0)" dur="4s" calcMode="linear" repeatCount="indefinite"/>
+    </pattern>
+    <pattern id="trace-glow" width="360" height="300" patternUnits="userSpaceOnUse">
+      <path d="M-1 258H72L88 255L100 261L114 258H145L158 258L172 245L185 270L202 218L220 285L239 247L252 258H286L300 258L314 254L326 262L338 258H361" stroke="#A987FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <animate attributeName="patternTransform" values="translate(0 0);translate(-360 0)" dur="4s" calcMode="linear" repeatCount="indefinite"/>
+    </pattern>
+  </defs>
+  <rect width="1440" height="300" fill="url(#background)"/>
+  <rect width="1440" height="300" fill="url(#ambient)"/>
+  <path d="M0 42H1440M0 292H1440" stroke="#D8CBF2" stroke-opacity=".055"/>
+  <path d="M180 0V300M540 0V300M900 0V300M1260 0V300" stroke="#D8CBF2" stroke-opacity=".035"/>
+  <rect y="0" width="1440" height="300" fill="url(#trace-glow)" opacity=".42" filter="url(#soft-glow)"/>
+  <rect y="0" width="1440" height="300" fill="url(#trace)"/>
+</svg>

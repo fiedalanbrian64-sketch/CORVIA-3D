@@ -1,0 +1,28 @@
+{
+  "id": "./index.html",
+  "name": "CORVIA - Automated Ward Orchestration System",
+  "short_name": "CORVIA",
+  "description": "A coordinated browser station for hospital ward operations and care-team workflows.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f8f7fc",
+  "theme_color": "#29233d",
+  "categories": ["medical", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='42' fill='%2329233d'/%3E%3Cpath d='M96 35c-25-30-70-11-70 27 0 42 70 98 70 98s70-56 70-98c0-38-45-57-70-27Z' fill='none' stroke='%23c4b5fd' stroke-width='11' stroke-linejoin='round'/%3E%3Cpath d='M96 61v61M65 91h62' stroke='white' stroke-width='11' stroke-linecap='round'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%2329233d'/%3E%3Cpath d='M256 94c-67-80-187-29-187 72 0 112 187 261 187 261s187-149 187-261c0-101-120-152-187-72Z' fill='none' stroke='%23c4b5fd' stroke-width='30' stroke-linejoin='round'/%3E%3Cpath d='M256 164v163M174 245h164' stroke='white' stroke-width='30' stroke-linecap='round'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
