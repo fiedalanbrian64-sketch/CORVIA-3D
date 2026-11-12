@@ -1,7 +1,7 @@
 
 # AI Usage Disclosure Record
 
-## Group Members
+## Responsible Members
 - Fiedalan, Brian
 - Mangaoang, John Kenneth Z.
 
