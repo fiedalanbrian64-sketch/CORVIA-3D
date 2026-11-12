@@ -126,15 +126,6 @@ D. PATIENT PERSONAL HEALTH PORTAL
 
 ---
 
-## 4. Disclosure Preparation
-- **AI Tool Used:** GitHub Copilot (AI assistant using Copilot SDK in VS Code) and Gemini.
-- **Task Where AI Was Used:** Preparing and formatting this disclosure record from the requirements and member assignments supplied by the group.
-- **Manuscript / Project Section:** `AI_DISCLOSURE.md`.
-- **Exact Prompt Used:** The verbatim disclosure requirements and member assignments supplied in the conversation for this task.
-- **AI Output Used:** This structured disclosure document, including the project contribution records, assigned responsible members, and explicit limitations on retained chat history.
-- **Validation Method:** Checked the document against all required disclosure fields and documentation rules in Section A and Section B of the project guidelines, and verified member assignments and accuracy with the group
-
----
 
 ## Prompt, Reference, and Privacy Attestation
 - **Prompt History Limitations:** The initial application prompt supplied by the group is reproduced in Record 1. The available conversation history still omits later prompts for some feature changes; add those verbatim from the complete chat history if required. Do not reconstruct missing wording.
