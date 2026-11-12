@@ -2,7 +2,7 @@
 # AI Usage Disclosure Record
 
 ## Responsible Members
-- Fiedalan, Brian
+- Fiedalan, Brian P.
 - Mangaoang, John Kenneth Z.
 
 ## 1. Application Implementation and Feature Changes
